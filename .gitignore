@@ -1,0 +1,28 @@
+# Node modules directory
+node_modules/
+ 
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Operating system files
+.DS_Store
+
+# Optional npm cache directory
+npm-debug.log
+npm-error.log
+
+# Optional yarn cache directory
+.yarn-integrity
+
+# Package lock files
+package-lock.json
+yarn.lock
+
+# Miscellaneous
+*.swp
