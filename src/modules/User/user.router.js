@@ -13,5 +13,5 @@ UserRouter.get("/current-user", UserController.getCurrentUser);
 UserRouter.get(
   "/current-user-chedevice",
   checkDevice(),
-  UserController.checkDevice
+  UserController.getCurrentUser
 );
