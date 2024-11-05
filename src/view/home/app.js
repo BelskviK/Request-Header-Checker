@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Determine access status
     if (
       (checks.userAgentMobile || checks.telegramAndroid) &&
-      (!checks.userAgentWindows || checks.telegramAndroid)
+      (!checks.userAgentWindows || telegramAndroid)
     ) {
       accessStatus.innerHTML = "<h3 style='color: green;'>Access Allowed</h3>";
     } else {
