@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error:", error);
     }
   });
-
   function evaluateHeaders(headers) {
     headerOutput.innerHTML = "<h3>Request Headers</h3>";
 
@@ -66,10 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
       result.innerHTML = ` ${passed ? "✅" : "❌"} : ${key}`;
       headerOutput.appendChild(result);
     }
-    // Determine access status
+
+    // Determine access status with updated condition for telegramAndroid
     if (
       (checks.userAgentMobile || checks.telegramAndroid) &&
-      (!checks.userAgentWindows || telegramAndroid)
+      !checks.userAgentWindows &&
+      checks.telegramAndroid // Ensure telegramAndroid is "true" (✅)
     ) {
       accessStatus.innerHTML = "<h3 style='color: green;'>Access Allowed</h3>";
     } else {
