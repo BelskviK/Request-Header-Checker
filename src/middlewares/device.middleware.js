@@ -1,12 +1,28 @@
 export function checkDevice() {
   return (req, res, next) => {
-    const userAgent = req.headers["user-agent"] || "";
+    const headers = req.headers;
 
-    // Check for Android or iPhone in User-Agent header
-    if (userAgent.includes("Android") || userAgent.includes("iPhone")) {
-      next(); // Allowed device, proceed to the next middleware or route handler
+    function evaluateHeaders(headers) {
+      const checks = {
+        userAgentMobile: /Android|iPhone/.test(headers["user-agent"]),
+        platformMobile: /Android|iOS/.test(headers["sec-ch-ua-platform"]),
+        telegramAndroid:
+          headers["x-requested-with"] === "org.telegram.messenger",
+        userAgentWindows: /Windows|Win64/.test(headers["user-agent"]),
+      };
+
+      // Determine access status with updated condition for telegramAndroid
+      return (
+        (checks.userAgentMobile || checks.telegramAndroid) &&
+        !checks.userAgentWindows &&
+        checks.telegramAndroid
+      );
+    }
+
+    // Call evaluateHeaders and decide based on the result
+    if (evaluateHeaders(headers)) {
+      next();
     } else {
-      // Device is not allowed, send forbidden message
       res.status(403).json({
         message:
           "Access forbidden: This service is only accessible from Android or iPhone devices.",
