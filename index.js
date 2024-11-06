@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 async function main() {
   app.use("/", HomeRouter);
-  app.use("/api/users", UserRouter);
+  // app.use("/api/users", UserRouter);
 
   app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port http://localhost:3000/");
   });
 }
 

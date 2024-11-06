@@ -6,12 +6,12 @@ import { checkDevice } from "../../middlewares/device.middleware.js";
 
 export const UserRouter = express.Router();
 
-// without middlaware
-UserRouter.get("/current-user", UserController.getCurrentUser);
+// // without middlaware
+// UserRouter.get("/current-user", UserController.getCurrentUser);
 
-// with middlaware
-UserRouter.get(
-  "/current-user-chedevice",
-  checkDevice(),
-  UserController.getCurrentUser
-);
+// // with middlaware
+// UserRouter.get(
+//   "/current-user-chedevice",
+//   // checkDevice(),
+//   UserController.getCurrentUser
+// );

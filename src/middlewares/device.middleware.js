@@ -23,7 +23,7 @@ export function checkDevice() {
     if (evaluateHeaders(headers)) {
       next();
     } else {
-      res.status(403).json({
+      res.status(403).redirect("/forbiden").json({
         message:
           "Access forbidden: This service is only accessible from Android or iPhone devices.",
       });
