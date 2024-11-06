@@ -28,25 +28,18 @@ body {
   color: green;
 }
 
-.button__wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-button {
+.button {
+  text-decoration: none;
+  color: white;
+  background-color: #6bd685;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-#headerOutput {
-  margin-top: 20px;
-  min-height: 200px;
-  text-align: left;
-  border: 1px solid #ccc;
   border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #f9f9f9;
+  width: 200px;
+  height: 48px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 24px;
 }

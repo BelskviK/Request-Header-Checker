@@ -27,3 +27,18 @@ body {
   /* white-space: nowrap; */
   color: rgba(255, 0, 0, 0.884);
 }
+.button {
+  text-decoration: none;
+  color: white;
+  background-color: #6bd685;
+  padding: 10px 20px;
+  border-radius: 15px;
+  width: 200px;
+  height: 48px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
