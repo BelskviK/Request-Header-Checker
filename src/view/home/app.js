@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonServer.addEventListener("click", async () => {
     try {
       const response = await fetch(
-        // "https://requestertest-github-io.onrender.com/api/users/current-user-chedevice",
-        "http://localhost:3000/api/users/current-user-chedevice",
+        "https://requestertest-github-io.onrender.com/api/users/current-user-chedevice",
+        // "http://localhost:3000/api/users/current-user-chedevice",
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
